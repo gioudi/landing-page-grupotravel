@@ -1,0 +1,246 @@
+
+
+
+* {
+  font-family: $font-family;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-weight: 300;
+  color: $off-white;
+  background: $charcoal;
+
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+html {
+  font-size: 0.8rem;
+
+  
+  
+
+}
+
+
+
+ @include media-breakpoint-up(sm) {
+  html {
+    font-size: 0.9rem;
+  }
+} 
+
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1rem;
+  }
+} 
+
+
+
+
+button, .btn {
+  cursor: pointer;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+
+.display-flex-between {
+  @include display-flex(row , space-between);
+}
+
+
+.btn {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 5rem;
+  margin: 1.5625rem 0 0 ;
+  border-radius: 2px;
+  text-align: center;
+  display: inline-block;
+  transition: all .3s ease;
+  background-color: transparent;
+  text-decoration: none;
+
+}
+
+.btn-outline-teal {
+  color: $teal;
+  border: 2px solid $teal;
+
+  &:hover {
+    background-color: $teal;
+    color: $white;
+  }
+}
+
+.btn-outline-purple {
+  color: $light-purple;
+  border: 2px solid $light-purple;
+
+  &:hover {
+    background-color: $light-purple;
+    color: $white;
+  }
+}
+
+
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  font-family: inherit;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color:inherit
+}
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto
+}
+
+
+.content-wrapper-sm {
+ @extend .wrapper;
+ max-width: 1200px;
+}
+.content-wrapper {
+  @extend .wrapper;
+  padding: 5rem 20%;
+  overflow: hidden;
+}
+
+
+
+.content-wrapper-lg {
+  @extend .wrapper;
+  padding: 12rem 20%;
+ }
+
+
+
+ .contact-form {
+   .form-group {
+     z-index: 1;
+     margin-bottom: 1.5rem;
+     position: relative;
+
+     input, textarea {
+       background: transparent;
+       border: 0;
+       border-bottom: 2px solid $teal;
+       border-radius:0;
+       color: $teal;
+       outline:none;
+       display: block;
+       width: 100%;
+
+       &:focus {
+         outline: none;
+         border-color: inherit;
+         box-shadow: none;
+       }
+
+       &:focus ~ label   , &:valid ~ label {
+      
+          top: -1.1rem;
+          left: 0;
+          transform: scale(0.8);
+        
+       }
+       textarea {
+         resize: none;
+       }
+     }
+
+
+     
+     label  {
+      position: absolute;
+      top:0.2rem;
+      left: 0.8rem;
+      color:$off-white;
+      transition: all 0.5s ease-in-out;
+      z-index: -1;
+    }
+
+
+   }
+ }
+
+
+ #menu-button {
+   cursor: pointer;
+   padding: 0.5rem;
+   display: block;
+
+
+   @media (min-width: 768px) {
+     display: none;
+   }
+
+
+   .bar1,.bar2,.bar3 {
+     width: 35px;
+     height: 3px;
+     background-color: $off-white;
+     margin: 6px 0;
+     transition: 0.4s;
+     border-radius: 10px;
+   }
+ }
+
+
+ .change  {
+  .bar1 {
+    transform: rotate(-45deg) translate(-8px,5px);
+  }
+  .bar2 {
+    opacity: 0;
+  }
+  .bar3 {
+    transform: rotate(-45deg) translate(-6px,6px);
+  }
+ }
+
+

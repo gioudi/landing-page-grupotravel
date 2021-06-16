@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Landing Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+
+    <!-- Custom Style -->
+
+    <link rel="stylesheet" href="./sass/style.css">
+
+
+    <style>
+      
+      .astonish {
+           visibility: visible;
+      }
+
+      @media (min-width: 768px) {
+           .astonish {
+                visibility: hidden;
+           }
+           .animated {
+                visibility: visible;
+           }
+      }
+ </style>
+  </head>
+  <body>
+    <!-- Nav -->
+      <nav class="main-nav" id="main-nav">
+        <div class="content-wrapper-sm">
+          <a href="" class="navbar-brand">Grupo Travel</a>
+          <div id="menu-button">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          <ul class="nav-links">
+           
+            <li><a href="#about">Acerca de</a></li>
+              <li><a href="#reserve">Reservaciones</a><li>
+                <li><a href="#contact">Contacto</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+      <!-- ----- -->
+
+      <!--  Main header -->
+      <header>
+        <img src="./dist/img/city.png" alt="City1" class="img-absolute">
+        <div class="wrapper astonish animated fadeInDown">
+          <h1><strong>Grupo</strong>Travel</h1> 
+          <h2>Viaja con nosotros <br> Disfruta de unas vacaciones</h2>
+        </div>
+      </header>
+      <!-- -------- -->
+
+
+      <!-- Content Main -->
+
+      <main>
+        <!-- about -->
+        <div class="content-wrapper" id="about">
+          <img src="./dist/img/city2.png" alt="City2" class="img-absolute">
+          <div class="grid">
+            <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInLeft">
+              <h2 class="section-title">Acerca de Grupo Travel</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
+            
+            </div>
+          </div>
+        </div>
+        <div class="content-wrapper-lg text-center astonish" data-animated="zoomIn">
+          <h2 class="section-title">Explorar nuevos paquetes</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id amet architecto velit in cupiditate ea voluptates unde, numquam, doloremque necessitatibus rerum iure labore dolorum optio laboriosam ipsa ratione vitae quisquam.</p>
+          <br>
+          <a  href="#" class="btn btn-outline-purple"> Descargar </a>
+        </div>
+        <div id="contact" class="content-wrapper">
+          <img src="./dist/img/city3.png" alt="" class="img-absolute">
+          <!-- Form -->
+          <form action="" class="contact-form astonish " data-animated="fadeInRight" method="post">
+            <h2 class="section-title">Contacto</h2>
+            <div class="grid">
+              <div class="grid-col-sm-12 grid-col-md-6">
+                   <div class="form-group">
+                        <input type="text" name="firstName" required>
+                        <label for="firstName">Nombre:</label>
+                   </div>
+              </div>
+              <div class="grid-col-sm-12 grid-col-md-6">
+                   <div class="form-group">
+                        <input type="text" name="lastName" required>
+                        <label for="lasttName">Apellido:</label>
+                   </div>
+              </div>
+              <div class="grid-col-sm-12">
+                   <div class="form-group">
+                        <input type="text" name="email" required>
+                        <label for="email">Email:</label>
+                   </div>
+              </div>
+              <div class="grid-col-sm-12">
+                   <div class="form-group">
+                        <textarea name="message" required></textarea>
+                        <label for="message">Mensaje:</label>
+                   </div>
+              </div>
+         </div>
+            <a href="" class="btn btn-outline-teal">Enviar</a>
+          </form>
+        </div>
+
+
+      </main>
+
+
+      <!-- Map -->
+      <iframe id="map" width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=es&amp;q=BOGOTA+(Grupo%20T)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+
+
+      <!-- Footer -->
+      <footer class="content-wrapper-sm display-flex-between">
+        <small>Front-end copyright</small>
+
+        <div class="social-links">
+          <ul>
+            <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram-square"></i></a></li>
+            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="js/menu.js" charset="utf-8"></script>
+
+      
+
+      <script src="./dist/js/astonish.js" charset="utf-8"></script>
+      <script src="./dist/js/nav.js" charset="utf-8"></script>
+      <script src="./dist/js/scroll.js" charset="utf-8"></script>
+      <script src="./dist/js/main.js" charset="utf-8"></script>
+  </body>
+</html>
