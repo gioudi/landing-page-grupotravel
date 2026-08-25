@@ -485,6 +485,24 @@ button, .btn {
   transition: all 0.5s ease-in-out;
   z-index: -1;
 }
+.contact-form .form-success {
+  display: none;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  background: rgba(0, 216, 178, 0.15);
+  border: 1px solid #00d8b2;
+  border-radius: 4px;
+  color: #00d8b2;
+  font-weight: 700;
+  text-align: center;
+}
+.contact-form .form-success.visible {
+  display: block;
+}
+.contact-form.form-sent {
+  opacity: 0.6;
+  pointer-events: none;
+}
 
 #menu-button {
   cursor: pointer;
@@ -585,6 +603,111 @@ textarea:focus-visible,
 .skip-link:focus {
   outline: 3px solid #111;
   outline-offset: 2px;
+}
+
+.tts-player {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(254, 255, 254, 0.05);
+  border-radius: 4px;
+  border: 1px solid rgba(254, 255, 254, 0.1);
+}
+.tts-player .tts-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.tts-player .tts-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #00d8b2;
+  border-radius: 4px;
+  background: transparent;
+  color: #00d8b2;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tts-player .tts-btn:hover:not(:disabled) {
+  background: #00d8b2;
+  color: #111;
+}
+.tts-player .tts-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.tts-player .tts-btn:focus-visible {
+  outline: 3px solid #5458ff;
+  outline-offset: 2px;
+}
+.tts-player .tts-btn i {
+  font-size: 0.75rem;
+}
+.tts-player .tts-speed {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+.tts-player .tts-speed-btn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgba(254, 255, 254, 0.2);
+  border-radius: 4px;
+  background: transparent;
+  color: #fefffe;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tts-player .tts-speed-btn:hover {
+  border-color: #00d8b2;
+  color: #00d8b2;
+}
+.tts-player .tts-speed-btn.active {
+  background: #00d8b2;
+  border-color: #00d8b2;
+  color: #111;
+}
+.tts-player .tts-speed-btn:focus-visible {
+  outline: 3px solid #5458ff;
+  outline-offset: 2px;
+}
+.tts-player .tts-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(254, 255, 254, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.tts-player .tts-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #00d8b2;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @keyframes fadeInDown {
