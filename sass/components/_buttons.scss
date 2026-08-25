@@ -1,0 +1,36 @@
+button, .btn {
+  cursor: pointer;
+}
+
+.btn {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 5rem;
+  margin: 1.5625rem 0 0;
+  border-radius: 2px;
+  text-align: center;
+  display: inline-block;
+  transition: all .3s ease;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.btn-outline-teal {
+  color: $teal;
+  border: 2px solid $teal;
+
+  &:hover {
+    background-color: $teal;
+    color: $white;
+  }
+}
+
+.btn-outline-purple {
+  color: $light-purple;
+  border: 2px solid $light-purple;
+
+  &:hover {
+    background-color: $light-purple;
+    color: $white;
+  }
+}
