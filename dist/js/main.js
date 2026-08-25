@@ -8,7 +8,6 @@ $('#menu-button').click(function() {
 applied, then toggle it to avoid an issue with the menu button disappearing */
 $(window).resize(function() {
      if ($(window).width() > 768) {
-          console.log($(window).width());
           if ($('.nav-links').hasClass('nav-open')) {
                $('#menu-button').toggleClass('change');
                $('.nav-links').toggleClass('nav-open');

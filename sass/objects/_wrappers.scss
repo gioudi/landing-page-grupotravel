@@ -1,0 +1,21 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content-wrapper-sm {
+  @extend .wrapper;
+  max-width: 1200px;
+}
+
+.content-wrapper {
+  @extend .wrapper;
+  padding: 5rem 20%;
+  overflow: hidden;
+}
+
+.content-wrapper-lg {
+  @extend .wrapper;
+  padding: 12rem 20%;
+}

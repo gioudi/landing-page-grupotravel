@@ -1,0 +1,13 @@
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.display-flex-between {
+  @include display-flex(row, space-between);
+}

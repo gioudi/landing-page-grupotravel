@@ -1,0 +1,42 @@
+.contact-form {
+  .form-group {
+    z-index: 1;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    input, textarea {
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid $teal;
+      border-radius: 0;
+      color: $teal;
+      outline: none;
+      display: block;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        border-color: inherit;
+        box-shadow: none;
+      }
+
+      &:focus ~ label, &:valid ~ label {
+        top: -1.1rem;
+        left: 0;
+        transform: scale(0.8);
+      }
+      textarea {
+        resize: none;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0.2rem;
+      left: 0.8rem;
+      color: $off-white;
+      transition: all 0.5s ease-in-out;
+      z-index: -1;
+    }
+  }
+}
