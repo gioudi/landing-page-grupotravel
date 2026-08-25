@@ -39,4 +39,25 @@
       z-index: -1;
     }
   }
+
+  .form-success {
+    display: none;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    background: rgba($teal, 0.15);
+    border: 1px solid $teal;
+    border-radius: 4px;
+    color: $teal;
+    font-weight: 700;
+    text-align: center;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  &.form-sent {
+    opacity: 0.6;
+    pointer-events: none;
+  }
 }

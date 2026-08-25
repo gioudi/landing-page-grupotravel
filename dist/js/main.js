@@ -25,3 +25,21 @@ $(window).resize(function() {
           }
      }
 });
+
+// Contact form handler
+$('#contact-form').on('submit', function(e) {
+     e.preventDefault();
+     var form = $(this);
+     var formData = form.serialize();
+
+     // Show success message
+     form.addClass('form-sent');
+     form.find('.form-success').addClass('visible');
+
+     // Reset form after 3 seconds
+     setTimeout(function() {
+          form[0].reset();
+          form.removeClass('form-sent');
+          form.find('.form-success').removeClass('visible');
+     }, 3000);
+});
