@@ -9,6 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
 
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,16 +45,18 @@
  </style>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
     <!-- Nav -->
-      <nav class="main-nav" id="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Navegacion principal">
         <div class="content-wrapper-sm">
-          <a href="" class="navbar-brand">Grupo Travel</a>
-          <div id="menu-button">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-          </div>
-          <ul class="nav-links">
+          <a href="/" class="navbar-brand">Grupo Travel</a>
+          <button type="button" id="menu-button" aria-label="Menu de navegacion" aria-expanded="false" aria-controls="nav-links">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+          </button>
+          <ul class="nav-links" id="nav-links" role="list">
            
             <li><a href="#about">Acerca de</a></li>
               <li><a href="#packages">Reservaciones</a></li>
@@ -73,7 +80,7 @@
 
       <!-- Content Main -->
 
-      <main>
+      <main id="main-content">
         <!-- about -->
         <div class="content-wrapper" id="about">
           <img src="./dist/img/city2.png" alt="Paisaje turistico" class="img-absolute" loading="lazy">
@@ -96,7 +103,7 @@
         <div id="contact" class="content-wrapper">
           <img src="./dist/img/city3.png" alt="Destino de vacaciones" class="img-absolute" loading="lazy">
           <!-- Form -->
-          <form action="" class="contact-form astonish " data-animated="fadeInRight" method="post">
+          <form action="" class="contact-form astonish " data-animated="fadeInRight" method="post" aria-label="Formulario de contacto">
             <h2 class="section-title">Contacto</h2>
             <div class="grid">
               <div class="grid-col-sm-12 grid-col-md-6">
@@ -133,7 +140,7 @@
 
 
       <!-- Map -->
-      <iframe id="map" width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=es&amp;q=BOGOTA+(Grupo%20T)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+      <iframe id="map" width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=es&amp;q=BOGOTA+(Grupo%20T)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" aria-label="Mapa de ubicacion en Bogota" loading="lazy"></iframe>
 
 
       <!-- Footer -->
@@ -141,10 +148,10 @@
         <small>Front-end copyright</small>
 
         <div class="social-links">
-          <ul>
-            <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href=""><i class="fab fa-instagram-square"></i></a></li>
-            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+          <ul role="list">
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"><i class="fab fa-instagram-square" aria-hidden="true"></i></a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </footer>

@@ -1,0 +1,28 @@
+:focus-visible {
+  outline: 3px solid $light-purple;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid $light-purple;
+  outline-offset: 2px;
+}
+
+.btn:focus-visible {
+  outline: 3px solid $white;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba($light-purple, 0.4);
+}
+
+.skip-link:focus {
+  outline: 3px solid $charcoal;
+  outline-offset: 2px;
+}
