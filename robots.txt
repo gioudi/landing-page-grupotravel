@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gioudi.github.io/landing-page-grupotravel/sitemap.xml

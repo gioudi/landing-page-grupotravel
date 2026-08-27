@@ -4,9 +4,53 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Landing Travel</title>
-    <meta name="description" content="Grupo Travel - Agencia de viajes en Bogota, Colombia. Paquetes turisticos, reservaciones y vacaciones a los mejores destinos. Viaja con nosotros.">
+    <title>Grupo Travel | Agencia de Viajes en Bogotá, Colombia</title>
+    <meta name="description" content="Grupo Travel es tu agencia de viajes en Bogotá. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos. ¡Viaja con nosotros y disfruta!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gioudi.github.io/landing-page-grupotravel/">
+
+    <!-- Favicon (inline SVG, no extra request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23111111'/%3E%3Ctext x='50' y='63' font-size='40' font-family='Arial' font-weight='bold' fill='%2300d8b2' text-anchor='middle'%3EGT%3C/text%3E%3C/svg%3E">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Grupo Travel">
+    <meta property="og:title" content="Grupo Travel | Agencia de Viajes en Bogotá, Colombia">
+    <meta property="og:description" content="Grupo Travel es tu agencia de viajes en Bogotá. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos. ¡Viaja con nosotros y disfruta!">
+    <meta property="og:url" content="https://gioudi.github.io/landing-page-grupotravel/">
+    <meta property="og:image" content="https://gioudi.github.io/landing-page-grupotravel/dist/img/city.png">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grupo Travel | Agencia de Viajes en Bogotá, Colombia">
+    <meta name="twitter:description" content="Grupo Travel es tu agencia de viajes en Bogotá. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos.">
+    <meta name="twitter:image" content="https://gioudi.github.io/landing-page-grupotravel/dist/img/city.png">
+
+    <!-- Structured data: Travel Agency -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Grupo Travel",
+      "description": "Agencia de viajes en Bogotá, Colombia. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos.",
+      "url": "https://gioudi.github.io/landing-page-grupotravel/",
+      "image": "https://gioudi.github.io/landing-page-grupotravel/dist/img/city.png",
+      "telephone": "+57 600 000 0000",
+      "email": "info@grupotravel.com",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Bogotá",
+        "addressRegion": "Cundinamarca",
+        "addressCountry": "CO"
+      }
+    }
+    </script>
   
 
     <!-- Security Headers -->
@@ -82,11 +126,11 @@
 
       <main id="main-content">
         <!-- about -->
-        <div class="content-wrapper" id="about" data-tts>
+        <section class="content-wrapper" id="about" data-tts aria-labelledby="about-title">
           <img src="./dist/img/city2.png" alt="Paisaje turistico" class="img-absolute" loading="lazy">
           <div class="grid">
             <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInLeft">
-              <h2 class="section-title">Acerca de Grupo Travel</h2>
+              <h2 class="section-title" id="about-title">Acerca de Grupo Travel</h2>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
@@ -116,12 +160,12 @@
             </div>
             <div aria-live="polite" class="sr-only tts-status"></div>
           </div>
-        </div>
-        <div id="packages" class="content-wrapper-lg text-center astonish" data-animated="zoomIn" data-tts>
-          <h2 class="section-title">Explorar nuevos paquetes</h2>
+        </section>
+        <section id="packages" class="content-wrapper-lg text-center astonish" data-animated="zoomIn" data-tts aria-labelledby="packages-title">
+          <h2 class="section-title" id="packages-title">Explorar nuevos paquetes</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id amet architecto velit in cupiditate ea voluptates unde, numquam, doloremque necessitatibus rerum iure labore dolorum optio laboriosam ipsa ratione vitae quisquam.</p>
           <br>
-          <a  href="#" class="btn btn-outline-purple"> Descargar </a>
+          <a href="#contact" class="btn btn-outline-purple"> Descargar </a>
           <div class="tts-player" role="region" aria-label="Reproductor de texto - Paquetes">
             <div class="tts-controls">
               <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false">
@@ -145,12 +189,12 @@
             </div>
             <div aria-live="polite" class="sr-only tts-status"></div>
           </div>
-        </div>
-        <div id="contact" class="content-wrapper" data-tts>
+        </section>
+        <section id="contact" class="content-wrapper" data-tts aria-labelledby="contact-title">
           <img src="./dist/img/city3.png" alt="Destino de vacaciones" class="img-absolute" loading="lazy">
           <!-- Form -->
           <form action="mailto:info@grupotravel.com" class="contact-form astonish " data-animated="fadeInRight" method="post" aria-label="Formulario de contacto" id="contact-form">
-            <h2 class="section-title">Contacto</h2>
+            <h2 class="section-title" id="contact-title">Contacto</h2>
             <div class="grid">
               <div class="grid-col-sm-12 grid-col-md-6">
                    <div class="form-group">
@@ -203,7 +247,7 @@
             </div>
             <div aria-live="polite" class="sr-only tts-status"></div>
           </div>
-        </div>
+        </section>
 
 
       </main>
