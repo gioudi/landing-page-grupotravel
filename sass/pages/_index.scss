@@ -206,12 +206,39 @@ footer {
          text-align: center;
          list-style: none;
 
-             a  {
-               font-size: 1.5rem;
-               color: rgb(var(--text));
-               display: block;
-             }
+         a  {
+           font-size: 1.5rem;
+           color: rgb(var(--text));
+           display: block;
+         }
        }
     }
   }
+}
+
+.travel-card {
+  background: rgb(var(--surface));
+  color: rgb(var(--on-surface));
+  border: 1px solid rgb(var(--border));
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  h3 {
+    margin-top: 0;
+    color: rgb(var(--teal));
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.travel-price {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: rgb(var(--on-surface));
 }

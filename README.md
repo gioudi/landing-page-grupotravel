@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[View Live Site](https://semi-dios.github.io/landing-page-grupotravel/)
+[View Live Site](https://gioudi.github.io/landing-page-grupotravel/)
 
 ---
 
@@ -56,6 +56,9 @@ This project was built as a portfolio piece demonstrating modern front-end devel
 - **Fully Responsive** - Mobile-first design, works on all screen sizes
 - **Accessible** - WCAG 2.2 AA compliant, screen reader friendly
 - **Text-to-Speech** - Per-section listen feature for visually impaired users
+- **Internationalized (ES/EN/DE)** - Runtime dictionary i18n with a language switcher and localized TTS
+- **Light/Dark Theme** - CSS custom-property design tokens, persisted preference, respects system theme
+- **Multi-Page SEO** - Dedicated, indexable Destinations and Packages pages with structured data
 - **Type-Safe** - TypeScript strict mode for error prevention
 - **Performant** - Optimized bundle, lazy loading, minimal dependencies
 - **SEO Optimized** - Meta tags, Open Graph, structured data, semantic HTML
@@ -69,26 +72,24 @@ This project was built as a portfolio piece demonstrating modern front-end devel
 landing-page-grupotravel/
 ├── src/
 │   ├── ts/                    # TypeScript source
+│   │   ├── main.ts            # Entry: init theme + i18n + TTS
+│   │   ├── i18n.ts            # ES/EN/DE dictionary + locale switcher
+│   │   ├── theme.ts           # Light/dark theme (persisted)
 │   │   ├── navigation.ts      # Hamburger menu
 │   │   ├── smooth-scroll.ts   # Smooth scroll
 │   │   ├── scroll-effects.ts  # Navbar + animations
 │   │   └── tts-player.ts      # Text-to-speech player
-│   ├── scss/                  # ITCSS Architecture
-│   │   ├── settings/          # Variables, config
-│   │   ├── tools/             # Mixins, functions
-│   │   ├── generic/           # Resets
-│   │   ├── elements/          # Typography, base
-│   │   ├── objects/           # Layout (grid, container)
-│   │   ├── components/        # UI (navbar, forms, TTS)
-│   │   └── utilities/         # Helpers
-│   └── img/                   # Source images
+│   └── sass/                  # ITCSS-style SCSS (base, components, objects, pages)
+├── public/
+│   └── img/                   # WebP images (served at root)
 ├── dist/                      # Build output (gitignored)
-├── index.html
+├── index.html                 # Home landing page
+├── destinations.html          # SEO: destinations page
+├── packages.html              # SEO: packages page
+├── specs/                     # Spec-driven development specs (FIX-00N-*.md)
 ├── package.json
 ├── tsconfig.json
-├── vite.config.ts
-├── SPEC.md                    # Specification document
-└── CONTRACT.md                # Development contract
+└── vite.config.ts             # Multi-page build input
 ```
 
 ---
@@ -119,10 +120,10 @@ This project follows the [ITCSS (Inverted Triangle CSS)](https://itcss.io/) meth
 
 | Pattern | Usage |
 |---|---|
-| **Observer** | Scroll events, TTS state changes |
+| **Observer** | Scroll events, TTS state changes, `i18n:change` event |
 | **Module** | Each TypeScript file is self-contained |
 | **Singleton** | TTS player (one instance per page) |
-| **Strategy** | Voice selection with fallback chain |
+| **Strategy** | Voice selection with fallback chain; pluggable locale dictionary |
 | **Template Method** | ITCSS layer structure |
 
 ---
@@ -229,16 +230,14 @@ This project targets **WCAG 2.2 AA** compliance.
 
 ## SEO
 
-- Unique, descriptive `<title>` tag
-- Meta description (150-160 characters)
-- Open Graph tags (Facebook, LinkedIn)
-- Twitter Card tags
-- Semantic HTML structure
-- Descriptive alt text on all images
-- robots.txt
-- sitemap.xml
-- Canonical URL
-- Structured data (JSON-LD)
+The site is a **multi-page build** (home + `destinations.html` + `packages.html`), each page with its own:
+
+- Unique, descriptive `<title>` tag and meta description
+- Canonical URL and hreflang alternates
+- Open Graph tags (Facebook, LinkedIn) and Twitter Card tags
+- Structured data (JSON-LD): `TravelAgency` (home), `ItemList` of destinations, `Product`/`Offer` packages
+- Semantic HTML structure and descriptive alt text
+- robots.txt, sitemap.xml
 
 ---
 

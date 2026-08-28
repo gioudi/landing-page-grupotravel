@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="es" data-i18n-meta="pkg">
+  <head>
+    <meta charset="utf-8">
+    <script>
+      (function () {
+        var stored = null;
+        try { stored = window.localStorage.getItem('theme'); } catch (e) {}
+        var dark = stored
+          ? stored === 'dark'
+          : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Paquetes Turísticos | Grupo Travel Bogotá</title>
+    <meta name="description" content="Explora los paquetes turísticos de Grupo Travel: vuelos, hoteles y tours todo incluido a los mejores precios. ¡Planifica tu viaje y disfruta!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gioudi.github.io/landing-page-grupotravel/packages.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es" href="https://gioudi.github.io/landing-page-grupotravel/packages.html">
+    <link rel="alternate" hreflang="en" href="https://gioudi.github.io/landing-page-grupotravel/packages.html">
+    <link rel="alternate" hreflang="de" href="https://gioudi.github.io/landing-page-grupotravel/packages.html">
+    <link rel="alternate" hreflang="x-default" href="https://gioudi.github.io/landing-page-grupotravel/packages.html">
+
+    <!-- Favicon (inline SVG, no extra request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23111111'/%3E%3Ctext x='50' y='63' font-size='40' font-family='Arial' font-weight='bold' fill='%2300d8b2' text-anchor='middle'%3EGT%3C/text%3E%3C/svg%3E">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Grupo Travel">
+    <meta property="og:title" content="Paquetes Turísticos | Grupo Travel Bogotá">
+    <meta property="og:description" content="Explora los paquetes turísticos de Grupo Travel: vuelos, hoteles y tours todo incluido a los mejores precios.">
+    <meta property="og:url" content="https://gioudi.github.io/landing-page-grupotravel/packages.html">
+    <meta property="og:image" content="https://gioudi.github.io/landing-page-grupotravel/img/city3.webp">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paquetes Turísticos | Grupo Travel Bogotá">
+    <meta name="twitter:description" content="Explora los paquetes turísticos de Grupo Travel: vuelos, hoteles y tours todo incluido a los mejores precios.">
+    <meta name="twitter:image" content="https://gioudi.github.io/landing-page-grupotravel/img/city3.webp">
+
+    <!-- Structured data: Product/Offer list of packages -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Paquetes turísticos de Grupo Travel",
+      "url": "https://gioudi.github.io/landing-page-grupotravel/packages.html",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Cartagena Todo Incluido",
+            "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "1250000" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "San Andrés Aventura",
+            "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "1650000" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Medellín Escapada",
+            "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "850000" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "name": "Santa Marta Premium",
+            "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "1200000" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "name": "París Romántico",
+            "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "6800000" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Product",
+            "name": "Cancún Todo Incluido",
+            "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "3200000" }
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- Vite entry (compiles TS + SCSS) -->
+    <script type="module" src="/src/ts/main.ts"></script>
+
+    <style>
+      .astonish {
+        visibility: visible;
+      }
+      @media (min-width: 768px) {
+        .astonish { visibility: hidden; }
+        .animated { visibility: visible; }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link" data-i18n="a11y.skip">Saltar al contenido</a>
+
+    <!-- Nav -->
+    <nav class="main-nav" id="main-nav" aria-label="Navegacion principal">
+      <div class="content-wrapper-sm">
+        <a href="./index.html" class="navbar-brand">Grupo Travel</a>
+        <button type="button" id="menu-button" aria-label="Menu de navegacion" aria-expanded="false" aria-controls="nav-links" data-i18n-attr="aria-label:nav.menuAria">
+          <span class="bar1"></span>
+          <span class="bar2"></span>
+          <span class="bar3"></span>
+        </button>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="./index.html" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="./destinations.html" data-i18n="nav.destinations">Destinos</a></li>
+          <li><a href="./packages.html" data-i18n="nav.packages">Paquetes</a></li>
+          <li><a href="./index.html#contact" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="lang-switcher" role="group" aria-label="Idioma">
+            <button type="button" data-lang="es" data-i18n="lang.es">Español</button>
+            <button type="button" data-lang="en" data-i18n="lang.en">Inglés</button>
+            <button type="button" data-lang="de" data-i18n="lang.de">Alemán</button>
+          </div>
+          <button type="button" class="theme-toggle" aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+            <i class="fas fa-sun" aria-hidden="true" style="display:none"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <img src="./img/city3.webp" alt="Paquetes turísticos" class="img-absolute" loading="eager" data-i18n-attr="alt:pkg.heroImgAlt">
+      <div class="wrapper astonish animated fadeInDown">
+        <h1><strong>Grupo</strong>Travel</h1>
+        <h2><span data-i18n="pkg.heroTitle">Paquetes Turísticos</span></h2>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="content-wrapper" id="packages" data-tts aria-labelledby="pkg-intro-title">
+        <div class="grid">
+          <div class="grid-col-sm-12">
+            <h2 class="section-title" id="pkg-intro-title" data-i18n="pkg.heroTitle">Paquetes Turísticos</h2>
+            <p data-i18n="pkg.intro">Nuestros paquetes combinan vuelos, alojamiento, traslados y tours para que disfrutes sin preocupaciones. Precios justos y acompañamiento en cada paso.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInLeft">
+            <article class="travel-card">
+              <h3 data-i18n="pkg.pkg1">Cartagena Todo Incluido</h3>
+              <p data-i18n="pkg.pkg1d">4 días y 3 noches con hotel 4 estrellas, desayuno y tour por la ciudad amurallada.</p>
+              <p class="travel-price" data-i18n="pkg.pkg1v">Desde $1,250,000 COP</p>
+              <a href="./index.html#contact" class="btn btn-outline-purple" data-i18n="pkg.cta">Reservar este paquete</a>
+            </article>
+          </div>
+          <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInRight">
+            <article class="travel-card">
+              <h3 data-i18n="pkg.pkg2">San Andrés Aventura</h3>
+              <p data-i18n="pkg.pkg2d">5 días con vuelo redondo, hotel frente al mar y recorrido por la isla.</p>
+              <p class="travel-price" data-i18n="pkg.pkg2v">Desde $1,650,000 COP</p>
+              <a href="./index.html#contact" class="btn btn-outline-purple" data-i18n="pkg.cta">Reservar este paquete</a>
+            </article>
+          </div>
+          <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInLeft">
+            <article class="travel-card">
+              <h3 data-i18n="pkg.pkg3">Medellín Escapada</h3>
+              <p data-i18n="pkg.pkg3d">3 días con hotel boutique, traslados aeropuerto y tour por el Pueblito Paisa.</p>
+              <p class="travel-price" data-i18n="pkg.pkg3v">Desde $850,000 COP</p>
+              <a href="./index.html#contact" class="btn btn-outline-purple" data-i18n="pkg.cta">Reservar este paquete</a>
+            </article>
+          </div>
+          <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInRight">
+            <article class="travel-card">
+              <h3 data-i18n="pkg.pkg4">Santa Marta Premium</h3>
+              <p data-i18n="pkg.pkg4d">4 días con acceso al Parque Tayrona, transporte y hotel con vista al mar.</p>
+              <p class="travel-price" data-i18n="pkg.pkg4v">Desde $1,200,000 COP</p>
+              <a href="./index.html#contact" class="btn btn-outline-purple" data-i18n="pkg.cta">Reservar este paquete</a>
+            </article>
+          </div>
+          <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInLeft">
+            <article class="travel-card">
+              <h3 data-i18n="pkg.pkg5">París Romántico</h3>
+              <p data-i18n="pkg.pkg5d">6 días con vuelo, hotel céntrico, tour de la ciudad y paseo por el Sena.</p>
+              <p class="travel-price" data-i18n="pkg.pkg5v">Desde $6,800,000 COP</p>
+              <a href="./index.html#contact" class="btn btn-outline-purple" data-i18n="pkg.cta">Reservar este paquete</a>
+            </article>
+          </div>
+          <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInRight">
+            <article class="travel-card">
+              <h3 data-i18n="pkg.pkg6">Cancún Todo Incluido</h3>
+              <p data-i18n="pkg.pkg6d">5 días en resort todo incluido con playa privada y traslados.</p>
+              <p class="travel-price" data-i18n="pkg.pkg6v">Desde $3,200,000 COP</p>
+              <a href="./index.html#contact" class="btn btn-outline-purple" data-i18n="pkg.cta">Reservar este paquete</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="tts-player" role="region" aria-label="Reproductor de texto - Paquetes" data-i18n-attr="aria-label:tts.regionPkg">
+          <div class="tts-controls">
+            <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false" data-i18n="tts.listen" data-i18n-attr="aria-label:tts.playAria">
+              <i class="fas fa-volume-up" aria-hidden="true"></i> Escuchar
+            </button>
+            <button type="button" class="tts-btn tts-pause" aria-label="Pausar lectura" disabled data-i18n-attr="aria-label:tts.pauseAria">
+              <i class="fas fa-pause" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="tts-btn tts-stop" aria-label="Detener lectura" disabled data-i18n-attr="aria-label:tts.stopAria">
+              <i class="fas fa-stop" aria-hidden="true"></i>
+            </button>
+            <div class="tts-speed" role="group" aria-label="Velocidad de lectura" data-i18n-attr="aria-label:tts.speed">
+              <button type="button" class="tts-speed-btn active" data-speed="1">1x</button>
+              <button type="button" class="tts-speed-btn" data-speed="1.25">1.25x</button>
+              <button type="button" class="tts-speed-btn" data-speed="1.5">1.5x</button>
+              <button type="button" class="tts-speed-btn" data-speed="2">2x</button>
+            </div>
+          </div>
+          <div class="tts-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de lectura" data-i18n-attr="aria-label:tts.progressAria">
+            <div class="tts-progress-bar"></div>
+          </div>
+          <div aria-live="polite" class="sr-only tts-status"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="content-wrapper-sm display-flex-between">
+      <small data-i18n="footer.note">© 2026 Grupo Travel. Tu agencia de viajes de confianza.</small>
+
+      <div class="social-links">
+        <ul role="list">
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook" data-i18n-attr="aria-label:footer.fb"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram" data-i18n-attr="aria-label:footer.ig"><i class="fab fa-instagram-square" aria-hidden="true"></i></a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn" data-i18n-attr="aria-label:footer.li"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

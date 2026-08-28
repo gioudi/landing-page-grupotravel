@@ -10,6 +10,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        destinations: 'destinations.html',
+        packages: 'packages.html',
       },
     },
   },
