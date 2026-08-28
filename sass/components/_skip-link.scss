@@ -2,8 +2,8 @@
   position: absolute;
   top: -100%;
   left: 0;
-  background: $teal;
-  color: $charcoal;
+  background: rgb(var(--teal));
+  color: rgb(var(--on-accent));
   padding: 1rem 2rem;
   z-index: 9999;
   font-weight: 700;
@@ -12,7 +12,7 @@
 
   &:focus {
     top: 0;
-    outline: 3px solid $light-purple;
+    outline: 3px solid rgb(var(--purple));
     outline-offset: 2px;
   }
 }

@@ -7,9 +7,9 @@
     input, textarea {
       background: transparent;
       border: 0;
-      border-bottom: 2px solid $teal;
+      border-bottom: 2px solid rgb(var(--teal));
       border-radius: 0;
-      color: $teal;
+      color: rgb(var(--teal));
       outline: none;
       display: block;
       width: 100%;
@@ -34,7 +34,7 @@
       position: absolute;
       top: 0.2rem;
       left: 0.8rem;
-      color: $off-white;
+      color: rgb(var(--text));
       transition: all 0.5s ease-in-out;
       z-index: -1;
     }
@@ -44,10 +44,10 @@
     display: none;
     padding: 1.5rem;
     margin-top: 1rem;
-    background: rgba($teal, 0.15);
-    border: 1px solid $teal;
+    background: rgba(var(--teal), 0.15);
+    border: 1px solid rgb(var(--teal));
     border-radius: 4px;
-    color: $teal;
+    color: rgb(var(--teal));
     font-weight: 700;
     text-align: center;
 
