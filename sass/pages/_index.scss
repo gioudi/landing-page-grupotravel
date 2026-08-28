@@ -1,5 +1,34 @@
 
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  button {
+    background: transparent;
+    border: 1px solid transparent;
+    color: $off-white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.35rem 0.5rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+
+    &:hover {
+      color: $teal;
+    }
+
+    &[aria-pressed="true"] {
+      color: $teal;
+      border-color: $teal;
+    }
+  }
+}
+
 .main-nav {
   display: block;
   padding: 1rem 2rem;
