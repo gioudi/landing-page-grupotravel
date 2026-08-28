@@ -1,4 +1,17 @@
+import { getLocale, getText, ttsLang, type Locale } from './i18n';
+
 type PlayerState = 'playing' | 'paused' | 'stopped';
+
+function voicePrefs(locale: Locale): string[] {
+  switch (locale) {
+    case 'en':
+      return ['en-US', 'en-GB', 'en'];
+    case 'de':
+      return ['de-DE', 'de'];
+    default:
+      return ['es-CO', 'es-ES', 'es-MX', 'es'];
+  }
+}
 
 class TTSPlayer {
   private synth: SpeechSynthesis | null = window.speechSynthesis;
@@ -25,12 +38,13 @@ class TTSPlayer {
   }
 
   private findVoice(): SpeechSynthesisVoice | null {
-    const preferred = ['es-CO', 'es-ES', 'es-MX', 'es'];
+    const preferred = voicePrefs(getLocale());
+    const langPrefix = preferred[0].split('-')[0];
     for (const lang of preferred) {
-      const match = this.voices.find((v) => v.lang === lang);
+      const match = this.voices.find((v) => v.lang.toLowerCase() === lang.toLowerCase());
       if (match) return match;
     }
-    return this.voices.find((v) => v.lang.startsWith('es')) ?? null;
+    return this.voices.find((v) => v.lang.toLowerCase().startsWith(langPrefix)) ?? null;
   }
 
   private getTextForSection(sectionEl: HTMLElement): string {
@@ -45,7 +59,7 @@ class TTSPlayer {
 
     const text = this.getTextForSection(sectionEl);
     this.currentUtterance = new SpeechSynthesisUtterance(text);
-    this.currentUtterance.lang = 'es-CO';
+    this.currentUtterance.lang = ttsLang();
     this.currentUtterance.rate = this.currentRate;
 
     const voice = this.findVoice();
@@ -134,17 +148,17 @@ class TTSPlayer {
 
     switch (state) {
       case 'playing':
-        if (status) status.textContent = 'Leyendo en voz alta.';
+        if (status) status.textContent = getText('tts.status.playing');
         if (playBtn) playBtn.setAttribute('aria-pressed', 'true');
         if (pauseBtn) pauseBtn.disabled = false;
         if (stopBtn) stopBtn.disabled = false;
         break;
       case 'paused':
-        if (status) status.textContent = 'Lectura pausada.';
+        if (status) status.textContent = getText('tts.status.paused');
         if (pauseBtn) pauseBtn.disabled = true;
         break;
       case 'stopped':
-        if (status) status.textContent = 'Lectura detenida.';
+        if (status) status.textContent = getText('tts.status.stopped');
         if (playBtn) playBtn.setAttribute('aria-pressed', 'false');
         if (pauseBtn) pauseBtn.disabled = true;
         if (stopBtn) stopBtn.disabled = true;
@@ -171,6 +185,12 @@ class TTSPlayer {
     document.addEventListener('visibilitychange', () => {
       if (document.hidden && (this.synth?.speaking || this.synth?.paused)) {
         this.synth?.pause();
+      }
+    });
+
+    window.addEventListener('i18n:change', () => {
+      if (this.currentSection && (this.synth?.speaking || this.synth?.paused)) {
+        this.stop(this.currentSection);
       }
     });
 
