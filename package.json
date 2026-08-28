@@ -1,0 +1,19 @@
+{
+  "name": "landing-page-grupotravel",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "images": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sass": "^1.103.1",
+    "sharp": "^0.35.4",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  }
+}

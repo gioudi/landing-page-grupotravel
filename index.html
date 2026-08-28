@@ -21,14 +21,14 @@
     <meta property="og:title" content="Grupo Travel | Agencia de Viajes en Bogotá, Colombia">
     <meta property="og:description" content="Grupo Travel es tu agencia de viajes en Bogotá. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos. ¡Viaja con nosotros y disfruta!">
     <meta property="og:url" content="https://gioudi.github.io/landing-page-grupotravel/">
-    <meta property="og:image" content="https://gioudi.github.io/landing-page-grupotravel/dist/img/city.png">
+    <meta property="og:image" content="https://gioudi.github.io/landing-page-grupotravel/img/city.webp">
     <meta property="og:locale" content="es_CO">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Grupo Travel | Agencia de Viajes en Bogotá, Colombia">
     <meta name="twitter:description" content="Grupo Travel es tu agencia de viajes en Bogotá. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos.">
-    <meta name="twitter:image" content="https://gioudi.github.io/landing-page-grupotravel/dist/img/city.png">
+    <meta name="twitter:image" content="https://gioudi.github.io/landing-page-grupotravel/img/city.webp">
 
     <!-- Structured data: Travel Agency -->
     <script type="application/ld+json">
@@ -38,7 +38,7 @@
       "name": "Grupo Travel",
       "description": "Agencia de viajes en Bogotá, Colombia. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos.",
       "url": "https://gioudi.github.io/landing-page-grupotravel/",
-      "image": "https://gioudi.github.io/landing-page-grupotravel/dist/img/city.png",
+      "image": "https://gioudi.github.io/landing-page-grupotravel/img/city.webp",
       "telephone": "+57 600 000 0000",
       "email": "info@grupotravel.com",
       "priceRange": "$",
@@ -67,9 +67,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
 
-    <!-- Custom Style -->
-
-    <link rel="stylesheet" href="./sass/style.css">
+    <!-- Vite entry (compiles TS + SCSS) -->
+    <script type="module" src="/src/ts/main.ts"></script>
 
 
     <style>
@@ -113,7 +112,7 @@
 
       <!--  Main header -->
       <header>
-        <img src="./dist/img/city.png" alt="Ciudad de Bogota" class="img-absolute" loading="eager">
+        <img src="./img/city.webp" alt="Ciudad de Bogota" class="img-absolute" loading="eager">
         <div class="wrapper astonish animated fadeInDown">
           <h1><strong>Grupo</strong>Travel</h1> 
           <h2>Viaja con nosotros <br> Disfruta de unas vacaciones</h2>
@@ -127,7 +126,7 @@
       <main id="main-content">
         <!-- about -->
         <section class="content-wrapper" id="about" data-tts aria-labelledby="about-title">
-          <img src="./dist/img/city2.png" alt="Paisaje turistico" class="img-absolute" loading="lazy">
+          <img src="./img/city2.webp" alt="Paisaje turistico" class="img-absolute" loading="lazy">
           <div class="grid">
             <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInLeft">
               <h2 class="section-title" id="about-title">Acerca de Grupo Travel</h2>
@@ -191,7 +190,7 @@
           </div>
         </section>
         <section id="contact" class="content-wrapper" data-tts aria-labelledby="contact-title">
-          <img src="./dist/img/city3.png" alt="Destino de vacaciones" class="img-absolute" loading="lazy">
+          <img src="./img/city3.webp" alt="Destino de vacaciones" class="img-absolute" loading="lazy">
           <!-- Form -->
           <form action="mailto:info@grupotravel.com" class="contact-form astonish " data-animated="fadeInRight" method="post" aria-label="Formulario de contacto" id="contact-form">
             <h2 class="section-title" id="contact-title">Contacto</h2>
@@ -270,12 +269,5 @@
           </ul>
         </div>
       </footer>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-      <script src="./dist/js/astonish.js" charset="utf-8"></script>
-      <script src="./dist/js/nav.js" charset="utf-8"></script>
-      <script src="./dist/js/scroll.js" charset="utf-8"></script>
-      <script src="./dist/js/main.js" charset="utf-8"></script>
-      <script src="./dist/js/tts.js" charset="utf-8"></script>
   </body>
 </html>
