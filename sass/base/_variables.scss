@@ -1,10 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* Paleta de colores */
-$teal: #00d8b2;
-$light-purple: #5458ff;
-$off-white: #fefffe;
-$white: #fff;
-$charcoal: #111;
+/* Design tokens — custom properties hold RGB triplets so both
+   rgb(var(--x)) and rgba(var(--x), a) resolve correctly at runtime. */
+
+:root {
+  /* Light theme (default) */
+  --bg: 248, 249, 250;          /* #f8f9fa */
+  --text: 26, 26, 30;           /* #1a1a1e */
+  --surface: 255, 255, 255;     /* #ffffff */
+  --on-surface: 26, 26, 30;     /* #1a1a1e */
+  --teal: 0, 137, 123;          /* #00897b (AA on light) */
+  --purple: 84, 88, 255;        /* #5458ff (AA on light) */
+  --white: 255, 255, 255;       /* #ffffff */
+  --on-accent: 17, 17, 17;      /* #111111 */
+  --border: 0, 0, 0;            /* #000000 */
+}
+
+[data-theme="dark"] {
+  /* Dark theme (preserves the original appearance) */
+  --bg: 17, 17, 17;             /* #111111 */
+  --text: 254, 255, 254;        /* #fefffe */
+  --surface: 17, 17, 17;        /* #111111 */
+  --on-surface: 254, 255, 254;  /* #fefffe */
+  --teal: 0, 216, 178;          /* #00d8b2 */
+  --purple: 84, 88, 255;        /* #5458ff */
+  --white: 255, 255, 255;       /* #ffffff */
+  --on-accent: 17, 17, 17;      /* #111111 */
+  --border: 0, 0, 0;            /* #000000 */
+}
+
 /* Font family */
 $font-family : 'Roboto', sans-serif;

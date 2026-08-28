@@ -1,7 +1,7 @@
 body {
   font-weight: 300;
-  color: $off-white;
-  background: $charcoal;
+  color: rgb(var(--text));
+  background: rgb(var(--bg));
 
   p {
     font-size: 1.125rem;

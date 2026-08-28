@@ -3,6 +3,16 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+    <script>
+      (function () {
+        var stored = null;
+        try { stored = window.localStorage.getItem('theme'); } catch (e) {}
+        var dark = stored
+          ? stored === 'dark'
+          : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Grupo Travel | Agencia de Viajes en Bogotá, Colombia</title>
     <meta name="description" content="Grupo Travel es tu agencia de viajes en Bogotá. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos. ¡Viaja con nosotros y disfruta!">
@@ -11,6 +21,12 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://gioudi.github.io/landing-page-grupotravel/">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es" href="https://gioudi.github.io/landing-page-grupotravel/">
+    <link rel="alternate" hreflang="en" href="https://gioudi.github.io/landing-page-grupotravel/">
+    <link rel="alternate" hreflang="de" href="https://gioudi.github.io/landing-page-grupotravel/">
+    <link rel="alternate" hreflang="x-default" href="https://gioudi.github.io/landing-page-grupotravel/">
 
     <!-- Favicon (inline SVG, no extra request) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23111111'/%3E%3Ctext x='50' y='63' font-size='40' font-family='Arial' font-weight='bold' fill='%2300d8b2' text-anchor='middle'%3EGT%3C/text%3E%3C/svg%3E">
@@ -88,34 +104,45 @@
  </style>
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <a href="#main-content" class="skip-link" data-i18n="a11y.skip">Saltar al contenido</a>
 
     <!-- Nav -->
       <nav class="main-nav" id="main-nav" aria-label="Navegacion principal">
         <div class="content-wrapper-sm">
           <a href="/" class="navbar-brand">Grupo Travel</a>
-          <button type="button" id="menu-button" aria-label="Menu de navegacion" aria-expanded="false" aria-controls="nav-links">
+          <button type="button" id="menu-button" aria-label="Menu de navegacion" aria-expanded="false" aria-controls="nav-links" data-i18n-attr="aria-label:nav.menuAria">
             <span class="bar1"></span>
             <span class="bar2"></span>
             <span class="bar3"></span>
           </button>
           <ul class="nav-links" id="nav-links" role="list">
            
-            <li><a href="#about">Acerca de</a></li>
-              <li><a href="#packages">Reservaciones</a></li>
-                <li><a href="#contact">Contacto</a></li>
+            <li><a href="#about" data-i18n="nav.about">Acerca de</a></li>
+              <li><a href="#packages" data-i18n="nav.packages">Reservaciones</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
             
           </ul>
+          <div class="nav-actions">
+            <div class="lang-switcher" role="group" aria-label="Idioma">
+              <button type="button" data-lang="es" data-i18n="lang.es">Español</button>
+              <button type="button" data-lang="en" data-i18n="lang.en">Inglés</button>
+              <button type="button" data-lang="de" data-i18n="lang.de">Alemán</button>
+            </div>
+            <button type="button" class="theme-toggle" aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
+              <i class="fas fa-moon" aria-hidden="true"></i>
+              <i class="fas fa-sun" aria-hidden="true" style="display:none"></i>
+            </button>
+          </div>
         </div>
       </nav>
       <!-- ----- -->
 
       <!--  Main header -->
       <header>
-        <img src="./img/city.webp" alt="Ciudad de Bogota" class="img-absolute" loading="eager">
+        <img src="./img/city.webp" alt="Ciudad de Bogota" class="img-absolute" loading="eager" data-i18n-attr="alt:hero.imgAlt">
         <div class="wrapper astonish animated fadeInDown">
           <h1><strong>Grupo</strong>Travel</h1> 
-          <h2>Viaja con nosotros <br> Disfruta de unas vacaciones</h2>
+          <h2><span data-i18n="hero.sub1">Viaja con nosotros</span> <br> <span data-i18n="hero.sub2">Disfruta de unas vacaciones</span></h2>
         </div>
       </header>
       <!-- -------- -->
@@ -126,122 +153,122 @@
       <main id="main-content">
         <!-- about -->
         <section class="content-wrapper" id="about" data-tts aria-labelledby="about-title">
-          <img src="./img/city2.webp" alt="Paisaje turistico" class="img-absolute" loading="lazy">
+          <img src="./img/city2.webp" alt="Paisaje turistico" class="img-absolute" loading="lazy" data-i18n-attr="alt:about.imgAlt">
           <div class="grid">
             <div class="grid-col-sm-12 grid-col-md-6 astonish" data-animated="fadeInLeft">
-              <h2 class="section-title" id="about-title">Acerca de Grupo Travel</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse cupiditate exercitationem quisquam pariatur explicabo necessitatibus illo accusantium praesentium officia eum minima voluptatem, laboriosam quo voluptate maiores incidunt, debitis facilis. Eveniet.</p>
+              <h2 class="section-title" id="about-title" data-i18n="about.title">Acerca de Grupo Travel</h2>
+              <p data-i18n="about.p1">Grupo Travel es tu agencia de viajes en Bogotá. Diseñamos experiencias únicas para que descubras los mejores destinos del mundo con total comodidad y confianza.</p>
+              <p data-i18n="about.p2">Desde playas paradisíacas hasta ciudades llenas de historia, creamos paquetes personalizados que se ajustan a tu presupuesto y a tus gustos. Reservas fáciles, precios justos y acompañamiento en cada paso.</p>
+              <p data-i18n="about.p3">Nuestro equipo de expertos te acompaña antes, durante y después de tu viaje. Viaja tranquilo: nosotros nos encargamos de todo.</p>
             
             </div>
           </div>
-          <div class="tts-player" role="region" aria-label="Reproductor de texto - Acerca de">
+          <div class="tts-player" role="region" aria-label="Reproductor de texto - Acerca de" data-i18n-attr="aria-label:tts.regionAbout">
             <div class="tts-controls">
-              <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false">
+              <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false" data-i18n="tts.listen" data-i18n-attr="aria-label:tts.playAria">
                 <i class="fas fa-volume-up" aria-hidden="true"></i> Escuchar
               </button>
-              <button type="button" class="tts-btn tts-pause" aria-label="Pausar lectura" disabled>
+              <button type="button" class="tts-btn tts-pause" aria-label="Pausar lectura" disabled data-i18n-attr="aria-label:tts.pauseAria">
                 <i class="fas fa-pause" aria-hidden="true"></i>
               </button>
-              <button type="button" class="tts-btn tts-stop" aria-label="Detener lectura" disabled>
+              <button type="button" class="tts-btn tts-stop" aria-label="Detener lectura" disabled data-i18n-attr="aria-label:tts.stopAria">
                 <i class="fas fa-stop" aria-hidden="true"></i>
               </button>
-              <div class="tts-speed" role="group" aria-label="Velocidad de lectura">
+              <div class="tts-speed" role="group" aria-label="Velocidad de lectura" data-i18n-attr="aria-label:tts.speed">
                 <button type="button" class="tts-speed-btn active" data-speed="1">1x</button>
                 <button type="button" class="tts-speed-btn" data-speed="1.25">1.25x</button>
                 <button type="button" class="tts-speed-btn" data-speed="1.5">1.5x</button>
                 <button type="button" class="tts-speed-btn" data-speed="2">2x</button>
               </div>
             </div>
-            <div class="tts-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de lectura">
+            <div class="tts-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de lectura" data-i18n-attr="aria-label:tts.progressAria">
               <div class="tts-progress-bar"></div>
             </div>
             <div aria-live="polite" class="sr-only tts-status"></div>
           </div>
         </section>
         <section id="packages" class="content-wrapper-lg text-center astonish" data-animated="zoomIn" data-tts aria-labelledby="packages-title">
-          <h2 class="section-title" id="packages-title">Explorar nuevos paquetes</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id amet architecto velit in cupiditate ea voluptates unde, numquam, doloremque necessitatibus rerum iure labore dolorum optio laboriosam ipsa ratione vitae quisquam.</p>
+          <h2 class="section-title" id="packages-title" data-i18n="packages.title">Explorar nuevos paquetes</h2>
+          <p data-i18n="packages.intro">Descubre nuestras opciones de viaje a los destinos más buscados del mundo. Paquetes todo incluido, vuelos, hoteles y tours con los mejores precios del mercado.</p>
           <br>
-          <a href="#contact" class="btn btn-outline-purple"> Descargar </a>
-          <div class="tts-player" role="region" aria-label="Reproductor de texto - Paquetes">
+          <a href="#contact" class="btn btn-outline-purple" data-i18n="packages.cta">Planifica tu viaje</a>
+          <div class="tts-player" role="region" aria-label="Reproductor de texto - Paquetes" data-i18n-attr="aria-label:tts.regionPackages">
             <div class="tts-controls">
-              <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false">
+              <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false" data-i18n="tts.listen" data-i18n-attr="aria-label:tts.playAria">
                 <i class="fas fa-volume-up" aria-hidden="true"></i> Escuchar
               </button>
-              <button type="button" class="tts-btn tts-pause" aria-label="Pausar lectura" disabled>
+              <button type="button" class="tts-btn tts-pause" aria-label="Pausar lectura" disabled data-i18n-attr="aria-label:tts.pauseAria">
                 <i class="fas fa-pause" aria-hidden="true"></i>
               </button>
-              <button type="button" class="tts-btn tts-stop" aria-label="Detener lectura" disabled>
+              <button type="button" class="tts-btn tts-stop" aria-label="Detener lectura" disabled data-i18n-attr="aria-label:tts.stopAria">
                 <i class="fas fa-stop" aria-hidden="true"></i>
               </button>
-              <div class="tts-speed" role="group" aria-label="Velocidad de lectura">
+              <div class="tts-speed" role="group" aria-label="Velocidad de lectura" data-i18n-attr="aria-label:tts.speed">
                 <button type="button" class="tts-speed-btn active" data-speed="1">1x</button>
                 <button type="button" class="tts-speed-btn" data-speed="1.25">1.25x</button>
                 <button type="button" class="tts-speed-btn" data-speed="1.5">1.5x</button>
                 <button type="button" class="tts-speed-btn" data-speed="2">2x</button>
               </div>
             </div>
-            <div class="tts-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de lectura">
+            <div class="tts-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de lectura" data-i18n-attr="aria-label:tts.progressAria">
               <div class="tts-progress-bar"></div>
             </div>
             <div aria-live="polite" class="sr-only tts-status"></div>
           </div>
         </section>
         <section id="contact" class="content-wrapper" data-tts aria-labelledby="contact-title">
-          <img src="./img/city3.webp" alt="Destino de vacaciones" class="img-absolute" loading="lazy">
+          <img src="./img/city3.webp" alt="Destino de vacaciones" class="img-absolute" loading="lazy" data-i18n-attr="alt:contact.imgAlt">
           <!-- Form -->
-          <form action="mailto:info@grupotravel.com" class="contact-form astonish " data-animated="fadeInRight" method="post" aria-label="Formulario de contacto" id="contact-form">
-            <h2 class="section-title" id="contact-title">Contacto</h2>
+          <form action="mailto:info@grupotravel.com" class="contact-form astonish " data-animated="fadeInRight" method="post" aria-label="Formulario de contacto" id="contact-form" data-i18n-attr="aria-label:contact.formAria">
+            <h2 class="section-title" id="contact-title" data-i18n="contact.title">Contacto</h2>
             <div class="grid">
               <div class="grid-col-sm-12 grid-col-md-6">
                    <div class="form-group">
                         <input type="text" name="firstName" required>
-                        <label for="firstName">Nombre:</label>
+                        <label for="firstName" data-i18n="contact.firstName">Nombre:</label>
                    </div>
               </div>
               <div class="grid-col-sm-12 grid-col-md-6">
                    <div class="form-group">
                         <input type="text" name="lastName" required>
-                        <label for="lastName">Apellido:</label>
+                        <label for="lastName" data-i18n="contact.lastName">Apellido:</label>
                    </div>
               </div>
               <div class="grid-col-sm-12">
                    <div class="form-group">
                         <input type="email" name="email" required>
-                        <label for="email">Email:</label>
+                        <label for="email" data-i18n="contact.email">Email:</label>
                    </div>
               </div>
               <div class="grid-col-sm-12">
                    <div class="form-group">
                         <textarea name="message" required></textarea>
-                        <label for="message">Mensaje:</label>
+                        <label for="message" data-i18n="contact.message">Mensaje:</label>
                    </div>
               </div>
          </div>
-            <button type="submit" class="btn btn-outline-teal">Enviar</button>
-            <div class="form-success" role="alert">Mensaje enviado. Te contactaremos pronto.</div>
+            <button type="submit" class="btn btn-outline-teal" data-i18n="contact.submit">Enviar</button>
+            <div class="form-success" role="alert" data-i18n="contact.success">Mensaje enviado. Te contactaremos pronto.</div>
           </form>
-          <div class="tts-player" role="region" aria-label="Reproductor de texto - Contacto">
+          <div class="tts-player" role="region" aria-label="Reproductor de texto - Contacto" data-i18n-attr="aria-label:tts.regionContact">
             <div class="tts-controls">
-              <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false">
+              <button type="button" class="tts-btn tts-play" aria-label="Escuchar esta seccion" aria-pressed="false" data-i18n="tts.listen" data-i18n-attr="aria-label:tts.playAria">
                 <i class="fas fa-volume-up" aria-hidden="true"></i> Escuchar
               </button>
-              <button type="button" class="tts-btn tts-pause" aria-label="Pausar lectura" disabled>
+              <button type="button" class="tts-btn tts-pause" aria-label="Pausar lectura" disabled data-i18n-attr="aria-label:tts.pauseAria">
                 <i class="fas fa-pause" aria-hidden="true"></i>
               </button>
-              <button type="button" class="tts-btn tts-stop" aria-label="Detener lectura" disabled>
+              <button type="button" class="tts-btn tts-stop" aria-label="Detener lectura" disabled data-i18n-attr="aria-label:tts.stopAria">
                 <i class="fas fa-stop" aria-hidden="true"></i>
               </button>
-              <div class="tts-speed" role="group" aria-label="Velocidad de lectura">
+              <div class="tts-speed" role="group" aria-label="Velocidad de lectura" data-i18n-attr="aria-label:tts.speed">
                 <button type="button" class="tts-speed-btn active" data-speed="1">1x</button>
                 <button type="button" class="tts-speed-btn" data-speed="1.25">1.25x</button>
                 <button type="button" class="tts-speed-btn" data-speed="1.5">1.5x</button>
                 <button type="button" class="tts-speed-btn" data-speed="2">2x</button>
               </div>
             </div>
-            <div class="tts-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de lectura">
+            <div class="tts-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de lectura" data-i18n-attr="aria-label:tts.progressAria">
               <div class="tts-progress-bar"></div>
             </div>
             <div aria-live="polite" class="sr-only tts-status"></div>
@@ -258,14 +285,14 @@
 
       <!-- Footer -->
       <footer class="content-wrapper-sm display-flex-between">
-        <small>Front-end copyright</small>
+        <small data-i18n="footer.note">© 2026 Grupo Travel. Tu agencia de viajes de confianza.</small>
 
         <div class="social-links">
           <ul role="list">
             <!-- TODO: Replace with actual Grupo Travel profile URLs -->
-            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"><i class="fab fa-instagram-square" aria-hidden="true"></i></a></li>
-            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook" data-i18n-attr="aria-label:footer.fb"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram" data-i18n-attr="aria-label:footer.ig"><i class="fab fa-instagram-square" aria-hidden="true"></i></a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn" data-i18n-attr="aria-label:footer.li"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </footer>

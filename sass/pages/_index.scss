@@ -1,5 +1,65 @@
 
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  button {
+    background: transparent;
+    border: 1px solid transparent;
+    color: rgb(var(--text));
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.35rem 0.5rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+
+    &:hover {
+      color: rgb(var(--teal));
+    }
+
+    &[aria-pressed="true"] {
+      color: rgb(var(--teal));
+      border-color: rgb(var(--teal));
+    }
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgb(var(--text));
+  font-size: 1.125rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  line-height: 1;
+
+  &:hover {
+    color: rgb(var(--teal));
+  }
+}
+
+html[data-theme="light"] .theme-toggle .fa-moon { display: inline-block; }
+html[data-theme="light"] .theme-toggle .fa-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .fa-sun { display: inline-block; }
+
 .main-nav {
   display: block;
   padding: 1rem 2rem;
@@ -7,24 +67,18 @@
   width: 100%;
   z-index: 2;
   transition: background 0.3s ease-in-out;
-  background: $charcoal;
-  border-bottom: 1px solid rgba(0,0,0,0.3);
+  background: rgb(var(--surface));
+  border-bottom: 1px solid rgba(var(--border), 0.3);
   @include shadow();
 
   >.content-wrapper-sm {
     @include display-flex(row, space-between);
   }
 
-  @include media-breakpoint-up(md){
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-
   .navbar-brand {
     font-size:1.5rem ;
     font-weight: 700;
-    color: $white;
+    color: rgb(var(--text));
     text-decoration: none;
   }
 
@@ -49,7 +103,7 @@
      margin: 1rem;
      text-align: center;
      a {
-       color: $off-white;
+       color: rgb(var(--text));
        display: block;
        text-decoration: none;
      }
@@ -61,7 +115,7 @@
    width: 100%;
    display: block;
    height: auto;
-   background: $charcoal;
+   background: rgb(var(--surface));
 
 
    li {
@@ -78,12 +132,12 @@
 
 
 .fixed-nav {
-  background: $charcoal;
+  background: rgb(var(--surface));
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(var(--border), 0.3);
   @include shadow();
   transition: background 0.3s ease-in-out;
 }
@@ -91,7 +145,7 @@
 header {
   position: relative;
   height: 100vh;
-  color: $white;
+  color: rgb(var(--white));
   text-align: center;
   @include display-flex(column);
 
@@ -154,10 +208,37 @@ footer {
 
          a  {
            font-size: 1.5rem;
-           color: $off-white;
+           color: rgb(var(--text));
            display: block;
          }
        }
     }
   }
+}
+
+.travel-card {
+  background: rgb(var(--surface));
+  color: rgb(var(--on-surface));
+  border: 1px solid rgb(var(--border));
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  h3 {
+    margin-top: 0;
+    color: rgb(var(--teal));
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.travel-price {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: rgb(var(--on-surface));
 }
