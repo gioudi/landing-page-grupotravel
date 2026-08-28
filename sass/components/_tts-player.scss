@@ -1,9 +1,9 @@
 .tts-player {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: rgba($off-white, 0.05);
+  background: rgba(var(--text), 0.05);
   border-radius: 4px;
-  border: 1px solid rgba($off-white, 0.1);
+  border: 1px solid rgba(var(--text), 0.1);
 
   .tts-controls {
     display: flex;
@@ -21,18 +21,18 @@
     min-width: 44px;
     min-height: 44px;
     padding: 0.5rem 1rem;
-    border: 1px solid $teal;
+    border: 1px solid rgb(var(--teal));
     border-radius: 4px;
     background: transparent;
-    color: $teal;
+    color: rgb(var(--teal));
     font-size: 0.875rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
 
     &:hover:not(:disabled) {
-      background: $teal;
-      color: $charcoal;
+      background: rgb(var(--teal));
+      color: rgb(var(--on-accent));
     }
 
     &:disabled {
@@ -41,7 +41,7 @@
     }
 
     &:focus-visible {
-      outline: 3px solid $light-purple;
+      outline: 3px solid rgb(var(--purple));
       outline-offset: 2px;
     }
 
@@ -60,28 +60,28 @@
     min-width: 44px;
     min-height: 44px;
     padding: 0.4rem 0.6rem;
-    border: 1px solid rgba($off-white, 0.2);
+    border: 1px solid rgba(var(--text), 0.2);
     border-radius: 4px;
     background: transparent;
-    color: $off-white;
+    color: rgb(var(--text));
     font-size: 0.75rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
 
     &:hover {
-      border-color: $teal;
-      color: $teal;
+      border-color: rgb(var(--teal));
+      color: rgb(var(--teal));
     }
 
     &.active {
-      background: $teal;
-      border-color: $teal;
-      color: $charcoal;
+      background: rgb(var(--teal));
+      border-color: rgb(var(--teal));
+      color: rgb(var(--on-accent));
     }
 
     &:focus-visible {
-      outline: 3px solid $light-purple;
+      outline: 3px solid rgb(var(--purple));
       outline-offset: 2px;
     }
   }
@@ -89,7 +89,7 @@
   .tts-progress {
     width: 100%;
     height: 4px;
-    background: rgba($off-white, 0.1);
+    background: rgba(var(--text), 0.1);
     border-radius: 2px;
     overflow: hidden;
     margin-top: 0.5rem;
@@ -98,7 +98,7 @@
   .tts-progress-bar {
     width: 0%;
     height: 100%;
-    background: $teal;
+    background: rgb(var(--teal));
     border-radius: 2px;
     transition: width 0.3s ease;
   }

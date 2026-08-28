@@ -16,21 +16,21 @@ button, .btn {
 }
 
 .btn-outline-teal {
-  color: $teal;
-  border: 2px solid $teal;
+  color: rgb(var(--teal));
+  border: 2px solid rgb(var(--teal));
 
   &:hover {
-    background-color: $teal;
-    color: $white;
+    background-color: rgb(var(--teal));
+    color: rgb(var(--white));
   }
 }
 
 .btn-outline-purple {
-  color: $light-purple;
-  border: 2px solid $light-purple;
+  color: rgb(var(--purple));
+  border: 2px solid rgb(var(--purple));
 
   &:hover {
-    background-color: $light-purple;
-    color: $white;
+    background-color: rgb(var(--purple));
+    color: rgb(var(--white));
   }
 }

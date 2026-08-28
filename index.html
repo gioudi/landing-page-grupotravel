@@ -3,6 +3,16 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+    <script>
+      (function () {
+        var stored = null;
+        try { stored = window.localStorage.getItem('theme'); } catch (e) {}
+        var dark = stored
+          ? stored === 'dark'
+          : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Grupo Travel | Agencia de Viajes en Bogotá, Colombia</title>
     <meta name="description" content="Grupo Travel es tu agencia de viajes en Bogotá. Paquetes turísticos, reservaciones y vacaciones a los mejores destinos. ¡Viaja con nosotros y disfruta!">
@@ -112,10 +122,16 @@
                 <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
             
           </ul>
-          <div class="lang-switcher" role="group" aria-label="Idioma">
-            <button type="button" data-lang="es" data-i18n="lang.es">Español</button>
-            <button type="button" data-lang="en" data-i18n="lang.en">Inglés</button>
-            <button type="button" data-lang="de" data-i18n="lang.de">Alemán</button>
+          <div class="nav-actions">
+            <div class="lang-switcher" role="group" aria-label="Idioma">
+              <button type="button" data-lang="es" data-i18n="lang.es">Español</button>
+              <button type="button" data-lang="en" data-i18n="lang.en">Inglés</button>
+              <button type="button" data-lang="de" data-i18n="lang.de">Alemán</button>
+            </div>
+            <button type="button" class="theme-toggle" aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
+              <i class="fas fa-moon" aria-hidden="true"></i>
+              <i class="fas fa-sun" aria-hidden="true" style="display:none"></i>
+            </button>
           </div>
         </div>
       </nav>
