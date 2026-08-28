@@ -58,7 +58,7 @@
 html[data-theme="light"] .theme-toggle .fa-moon { display: inline-block; }
 html[data-theme="light"] .theme-toggle .fa-sun { display: none; }
 html[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
-html[data-theme="dark"] .theme-toggle .fa-sun { display: inline-block; }
+html[data-theme="dark"] .theme-toggle .fa-sun { display: inline-block; color: #ffffff; }
 
 .main-nav {
   display: block;

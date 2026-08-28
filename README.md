@@ -116,6 +116,23 @@ This project follows the [ITCSS (Inverted Triangle CSS)](https://itcss.io/) meth
 
 ---
 
+## Architecture Decisions
+
+Key decisions and their rationale:
+
+| Decision | Choice | Rationale |
+|---|---|---|
+| **Styling** | CSS custom-property **design tokens** (RGB triplets) under `:root` / `[data-theme]` | One source of truth for both themes; `rgb(var(--x))` and `rgba(var(--x), a)` both resolve at runtime; theme toggle needs no rebuild |
+| **Theming** | `data-theme` attribute on `<html>` + persisted `localStorage('theme')` + `prefers-color-scheme` fallback | No FOUC (inline head script sets it pre-paint); accessible sun/moon toggle in the nav |
+| **i18n** | Zero-dependency **runtime dictionary** (`Record<Locale, Translation>`) | Fits the vanilla-TS/Vite stack; adding a language is one dictionary entry, no framework weight |
+| **TTS** | Localized voices/status derived from the active locale | Speech matches the displayed language; status strings translated |
+| **Build** | **Multi-page** Vite build (home + `destinations.html` + `packages.html`) | Dedicated, indexable SEO pages with structured data |
+| **Tooling** | Vite + TypeScript + SCSS (ITCSS); vanilla TS, **no jQuery / frameworks** | Small, tree-shakeable, type-safe bundle |
+
+These correspond to the specs under [`specs/`](./specs) (FIX-014 i18n, FIX-015 theme toggle, FIX-016 SEO pages).
+
+---
+
 ## Design Patterns
 
 | Pattern | Usage |
@@ -125,6 +142,8 @@ This project follows the [ITCSS (Inverted Triangle CSS)](https://itcss.io/) meth
 | **Singleton** | TTS player (one instance per page) |
 | **Strategy** | Voice selection with fallback chain; pluggable locale dictionary |
 | **Template Method** | ITCSS layer structure |
+| **Bridge / Token** | Theming driven by a single set of CSS custom-property design tokens instead of scattered color literals |
+| **State** | Persisted UI state (`theme`, `lang`) in `localStorage` |
 
 ---
 
